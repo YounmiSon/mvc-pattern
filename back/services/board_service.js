@@ -7,6 +7,7 @@ const { Post } = require("../model");
 // findAll, detroy, create, delete 등 DB 작업 처리해서 내보내기
 // 필요시 where 사용
 
+// 인자로 title, content 보내줘야 됨
 module.exports.addPost = async (title, content) => {
   try {
     return await Post.create({ title, content });

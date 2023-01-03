@@ -13,6 +13,7 @@ const Write = () => {
   };
 
   const submitHandler = () => {
+    // inputs안에 객체로 지금 들어있으니까 보낼 때는 값을 또 나눠서 보내줘야됨 그니까 자꾸 title 안찍혔음
     dispatch(addPost(inputs.title, inputs.content));
     // console.log({ ...inputs });
   };
