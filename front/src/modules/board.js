@@ -90,22 +90,15 @@ export const editPost = (id, title, content, nav) => {
         content,
       },
     });
-    const { data } = post; //post.data값과 같다
-    // controller에서 send로 보내니까 그제서야 여기 console이 찍혔다
-    console.log(post);
-    dispatch({ type: EDIT_POST, payload: data });
-    // try {
-    //   if ((title === "" && content === "") || title === "" || content === "")
-    //     throw new Error("ERR! 공백 비허용 에러");
-    //   const { data } = post; //post.data값과 같다
-    //   // controller에서 send로 보내니까 그제서야 여기 console이 찍혔다
-    //   // console.log(post);
-    //   dispatch({ type: EDIT_POST, payload: data });
-    //   nav("/");
-    // } catch {
-    //   alert("내용을 모두 입력하세요");
-    //   nav("/:id/edit");
-    // }
+    try {
+      const { data } = post;
+      // console.log(post);
+      dispatch({ type: EDIT_POST, payload: data });
+      alert("수정 완료!");
+      nav("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
 

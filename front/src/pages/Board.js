@@ -9,6 +9,7 @@ const Board = () => {
 
   useEffect(() => {
     dispatch(getPostAll());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const posts = useSelector((state) => state.board.posts);

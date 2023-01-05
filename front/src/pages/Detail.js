@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { deletePost, editPost, getPost } from "../modules/board";
+import { deletePost, getPost } from "../modules/board";
 
 const Detail = () => {
   const dispatch = useDispatch();
@@ -20,6 +20,7 @@ const Detail = () => {
     const id = location.pathname.split("/")[1];
     // console.log(id);
     dispatch(getPost(id));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const id = location.pathname.split("/")[1];

@@ -73,7 +73,7 @@ exports.editPost = async (req, res, next) => {
     console.log(req.body);
     if ((title === "" && content === "") || title === "" || content === "")
       throw new Error("공백 안됨");
-    const newPost = await boardService.editPost(id);
+    const newPost = await boardService.editPost(id, title, content);
     res.send(newPost);
   } catch (e) {
     res.send(e);

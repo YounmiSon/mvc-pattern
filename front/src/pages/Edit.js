@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { editPost } from "../modules/board";
@@ -22,6 +22,14 @@ const Edit = () => {
   }, []);
 
   const submitHandler = () => {
+    if (title.current.value === "") {
+      alert("제목을 입력해주세요");
+      return;
+    }
+    if (content.current.value === "") {
+      alert("내용을 입력해주세요");
+      return;
+    }
     dispatch(editPost(id, title.current.value, content.current.value, nav));
   };
 
